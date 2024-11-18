@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 2do Aniversario</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Importación de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="background-video">
+        <source src="background.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
+
+    <div class="container">
+        <div class="decorations">
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="star"></div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="star"></div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="star"></div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="star"></div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="star"></div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="star"></div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="star"></div>
+        </div>
+
+        <div class="music-control">
+            <button id="music-toggle" class="music-button">🔇</button>
+        </div>
+
+        <div class="message">
+            <h1>¡Feliz 2do Aniversario, Mi Amor!</h1>
+            <p class="narration">En estos dos años, cada día a tu lado ha sido un regalo. Tu amor ilumina mi vida y me hace querer ser mejor cada día. Estoy agradecido por cada momento compartido y emocionado por todos los que aún nos esperan. Te amo más de lo que las palabras pueden expresar.</p>
+        </div>
+
+        <div class="gallery">
+            <div class="images">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m1.jpg" alt="Foto 1">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Eres mi todo. ❤️</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m2.jpg" alt="Foto 2">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Dos años juntos, y aún siento mariposas. 🦋</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m3.jpg" alt="Foto 3">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>No hay un lugar más bonito que a tu lado. 🌹</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m4.jpg" alt="Foto 4">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Nuestro amor es eterno. 💕</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m5.jpg" alt="Foto 5">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Gracias por ser mi razón de vivir. 🌟</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m6.jpg" alt="Foto 6">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Juntos, somos invencibles. 💪</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m7.jpg" alt="Foto 7">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Eres mi felicidad. 😊</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="m8.jpg" alt="Foto 8">
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Te amo más de lo que las palabras pueden decir. 🥰</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="popup" class="popup hidden">
+            <button id="close-popup" class="close-button">&times;</button>
+            <p id="popup-message"></p>
+        </div>
+
+        <div class="hearts"></div>
+        <div class="stars"></div>
+        <div class="rose"></div>
+
+        <div class="music">
+            <audio id="background-music" loop>
+                <source src="promesa.mp3" type="audio/mpeg">
+                Tu navegador no soporta la reproducción de música.
+            </audio>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
