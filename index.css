@@ -1,10 +1,15 @@
 /* Importación de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap');
 
-/* Estilo general */
-body {
+/* Reset de estilos básicos */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
     font-family: 'Roboto', sans-serif;
     color: #333;
     overflow-x: hidden;
@@ -23,7 +28,7 @@ body {
     height: auto;
     z-index: -1;
     transform: translate(-50%, -50%);
-    background-size: cover;
+    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
 }
 
 /* Contenedor principal */
@@ -49,17 +54,21 @@ body {
     z-index: 1;
 }
 
+/* Tamaño base de decoraciones usando unidades relativas */
 .decorations .heart,
 .decorations .flower,
 .decorations .star {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 3vw; /* Utiliza viewport width para escalabilidad */
+    height: 3vw;
+    max-width: 50px; /* Limita el tamaño máximo para pantallas grandes */
+    max-height: 50px;
     background-size: cover;
     opacity: 0.8;
     animation: float 10s infinite ease-in-out;
 }
 
+/* Imágenes de decoraciones */
 .decorations .heart {
     background-image: url('https://cdn.pixabay.com/photo/2012/04/13/00/23/heart-31213_1280.png');
 }
@@ -72,6 +81,7 @@ body {
     background-image: url('https://cdn.pixabay.com/photo/2013/07/13/12/37/star-160259_1280.png');
 }
 
+/* Posicionamiento de decoraciones usando porcentajes */
 .decorations .heart:nth-child(1) {
     top: 5%;
     left: 10%;
@@ -149,7 +159,7 @@ body {
     border: none;
     color: #333;
     font-size: 1.5rem;
-    padding: 12px;
+    padding: 0.8em;
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
@@ -168,7 +178,7 @@ body {
     padding: 35px 45px;
     border-radius: 25px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    max-width: 900px;
+    max-width: 90%; /* Cambiado de 900px a 90% para mejor adaptabilidad */
 }
 
 .message h1 {
@@ -203,15 +213,19 @@ body {
     width: 100%;
 }
 
+/* Flip-card con unidades relativas */
 .flip-card {
     background-color: transparent;
     width: 220px;
     height: 220px;
     perspective: 1200px;
+    position: relative;
 }
 
 .flip-card-inner {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -250,6 +264,17 @@ body {
     box-sizing: border-box;
     font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.flip-card-back p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Asegura que el texto no exceda el ancho del contenedor */
 }
 
 /* Pop-up para frases */
@@ -364,7 +389,26 @@ body {
 }
 
 /* Responsividad */
-@media (max-width: 1200px) {
+
+/* Para pantallas grandes (desktops) */
+@media (min-width: 1201px) {
+    .message {
+        max-width: 900px;
+    }
+
+    .flip-card {
+        width: 220px;
+        height: 220px;
+    }
+
+    .rose {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Tablets y dispositivos medianos */
+@media (max-width: 1200px) and (min-width: 993px) {
     .flip-card {
         width: 200px;
         height: 200px;
@@ -376,9 +420,25 @@ body {
         width: 40px;
         height: 40px;
     }
+
+    .rose {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Ajuste de fuente en flip-card-back */
+    .flip-card-back {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    .flip-card-back p {
+        font-size: 1.1rem;
+    }
 }
 
-@media (max-width: 992px) {
+/* Tablets más pequeñas y dispositivos medianos */
+@media (max-width: 992px) and (min-width: 769px) {
     .flip-card {
         width: 180px;
         height: 180px;
@@ -390,9 +450,7 @@ body {
         width: 35px;
         height: 35px;
     }
-}
 
-@media (max-width: 768px) {
     .message {
         padding: 25px 30px;
     }
@@ -409,14 +467,27 @@ body {
         gap: 20px;
     }
 
-    .flip-card {
-        width: 160px;
-        height: 160px;
-    }
-
     .rose {
         width: 50px;
         height: 50px;
+    }
+
+    /* Ajuste de fuente en flip-card-back */
+    .flip-card-back {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .flip-card-back p {
+        font-size: 1rem;
+    }
+}
+
+/* Móviles y dispositivos pequeños */
+@media (max-width: 768px) and (min-width: 481px) {
+    .flip-card {
+        width: 160px;
+        height: 160px;
     }
 
     .decorations .heart,
@@ -425,9 +496,36 @@ body {
         width: 30px;
         height: 30px;
     }
+
+    .rose {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ajuste de fuente en flip-card-back */
+    .flip-card-back {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .flip-card-back p {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
+    /* Reduce la cantidad de decoraciones para evitar sobrecarga visual */
+    .decorations .heart,
+    .decorations .flower,
+    .decorations .star {
+        display: none;
+    }
+
+    .message {
+        margin-top: 100px;
+        padding: 20px 25px;
+    }
+
     .message h1 {
         font-size: 2.5rem;
     }
@@ -446,10 +544,23 @@ body {
         height: 40px;
     }
 
-    .decorations .heart,
-    .decorations .flower,
-    .decorations .star {
-        width: 25px;
-        height: 25px;
+    .music-button {
+        font-size: 1.2rem;
+        padding: 0.6em;
+    }
+
+    /* Ajuste de la galería para pantallas pequeñas */
+    .gallery {
+        gap: 15px;
+    }
+
+    /* Ajuste de fuente en flip-card-back */
+    .flip-card-back {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    .flip-card-back p {
+        font-size: 0.8rem;
     }
 }
