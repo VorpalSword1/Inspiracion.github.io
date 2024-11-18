@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const musicToggle = document.getElementById('music-toggle');
     const audio = document.getElementById('background-music');
     const popup = document.getElementById('popup');
-    const popupMessage = document.getElementById('popup-message');
     const closePopupButton = document.getElementById('close-popup');
 
     let popupTimeout = null;
